@@ -50,7 +50,7 @@ ERAhourlyAirtemp <- function(ERAt2m, t2mColnum=1, method='linear', quiet=TRUE, l
   merged <- merge(hourly, ERAt2m, by='datetime', all.x=TRUE)
 
   # now interpolate
-  hourlyT <- CRHMr::interpolate(merged, varcols=1, methods=method, maxlength=4,
+  hourlyT <- CRHMr::interpolate(merged, varcols=1, methods=method, maxlength=5,
                               quiet, logfile)
 
   names(hourlyT) <- c('datetime', 't')
