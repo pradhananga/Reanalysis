@@ -48,7 +48,7 @@ ERAhourlyVP <- function(ERAd2m, d2mColnum=1, method='linear', quiet=TRUE, logfil
   merged <- merge(hourlyd2m, ERAd2m, by='datetime', all.x=TRUE)
 
   # now interpolate
-  hourlydt2m <-  CRHMr::interpolate(merged, varcols=1, methods=method, maxlength=4,
+  hourlydt2m <-  CRHMr::interpolate(merged, varcols=1, methods=method, maxlength=5,
                              quiet, logfile)
 
   # get vapour pressure
