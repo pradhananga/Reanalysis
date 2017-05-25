@@ -61,7 +61,7 @@ ERAhourlyWindspeed <- function(ERAu10, u10Colnum=1, ERAv10, v10Colnum=1,
   merged2 <- merge(hourly, merged, by='datetime', all.x=TRUE)
 
   # now interpolate
-  hourly <-  CRHMr::interpolate(merged2, varcols=c(1,2), methods=method, maxlength=4,
+  hourly <-  CRHMr::interpolate(merged2, varcols=c(1,2), methods=method, maxlength=5,
                              quiet, logfile)
 
   hourly$windspeed <- (hourly$u10 ^ 2 + hourly$v10 ^ 2) ^ 0.5
